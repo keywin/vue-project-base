@@ -1,0 +1,248 @@
+@import "varibale";
+
+/*设置字体颜色*/
+@mixin font_color($color) {
+  color: $color;
+}
+
+/*设置背景颜色*/
+@mixin bg_color($color) {
+  background-color: $color;
+}
+
+// 设置边框
+@mixin border_color($color, $direction: null, $width: 1Px, $style: solid) {
+  @if ($direction == null) {
+    border: $width $style $color;
+  } @else {
+    border-#{$direction}: $width $style $color;
+  }
+}
+
+// 阴影
+@mixin box-shadow($color) {
+  box-shadow: $color;
+}
+
+/**
+  字体颜色
+  参数：1: 主题色 2: 字体默认颜色 3:  标题(表格、面包屑、tab)字体颜色
+       4: 内容(表单信息、表格内容)字体颜色 5: 错误信息(提示信息)字体颜色 6: 按钮(搜索、保存、确定、主页菜单)字体颜色
+ */
+@mixin font-color-theme($type: 1) {
+  @each $themename, $theme in $themes {
+    [data-theme=#{$themename}] & {
+      @if ($type == 1) {
+        color: map-get($map: $theme, $key: primary-color)
+      }
+      @if ($type == 2) {
+        color: map-get($map: $theme, $key: font-default-color)
+      }
+      @if ($type == 3) {
+        color: map-get($map: $theme, $key: font-th-color)
+      }
+      @if ($type == 4) {
+        color: map-get($map: $theme, $key: font-td-color)
+      }
+      @if ($type == 5) {
+        color: map-get($map: $theme, $key: font-error-color)
+      }
+      @if ($type == 6) {
+        color: map-get($map: $theme, $key: font-search-color)
+      }
+      @if ($type == 7) {
+        color: map-get($map: $theme, $key: font-avatar-color)
+      }
+      @if ($type == 8) {
+        color: map-get($map: $theme, $key: font-warn-color)
+      }
+      @if ($type == 9) {
+        color: map-get($map: $theme, $key: font-login-input-color)
+      }
+      @if ($type == 10) {
+        color: map-get($map: $theme, $key: font-date-color)
+      }
+      @if ($type == 11) {
+        color: map-get($map: $theme, $key: font-nav-color)
+      }
+      @if ($type == 12) {
+        color: map-get($map: $theme, $key: font-nav-active-color)
+      }
+      @if ($type == 13) {
+        color: map-get($map: $theme, $key: font-echarts-tip-color)
+      }
+      @if ($type == 14) {
+        color: map-get($map: $theme, $key: font-select-active)
+      }
+      @if ($type == 15) {
+        color: map-get($map: $theme, $key: font-echarts-icon-color)
+      }
+      @if ($type == 16) {
+        color: map-get($map: $theme, $key: font-echarts-tab-color)
+      }
+      @if ($type == 17) {
+        color: map-get($map: $theme, $key: font-echarts-tab-active-color)
+      }
+      @if ($type == 18) {
+        color: map-get($map: $theme, $key: font-home-color)
+      }
+      @if ($type == 19) {
+        color: map-get($map: $theme, $key: font-home-active-color)
+      }
+      @if ($type == 20) {
+        color: map-get($map: $theme, $key: font-map-button-color)
+      }
+    }
+  }
+}
+
+/**
+  背景颜色
+  参数：1: 系统背景色 2: 区域内容背景色 3: 表格标题背景色 4: 弹窗(表格)标题背景色
+       5: 弹窗内容背景色 6: 删除按钮背景色 7: 下拉框背景颜色 8: 下拉框小三角背景颜色
+       9: 单个菜单背景颜色
+ */
+@mixin bg-color-theme($type: 1) {
+  @each $themename, $theme in $themes {
+    [data-theme=#{$themename}] & {
+      @if ($type == 1) {
+        background-color: map-get($map: $theme, $key: background-system)
+      }
+      @if ($type == 2) {
+        background-color: map-get($map: $theme, $key: background-card)
+      }
+      @if ($type == 3) {
+        background-color: map-get($map: $theme, $key: background-table-th)
+      }
+      @if ($type == 4) {
+        background-color: map-get($map: $theme, $key: background-dialog-title)
+      }
+      @if ($type == 5) {
+        background-color: map-get($map: $theme, $key: background-dialog-body)
+      }
+      @if ($type == 6) {
+        background-color: map-get($map: $theme, $key: background-button-error)
+      }
+      @if ($type == 7) {
+        background-color: map-get($map: $theme, $key: background-select)
+      }
+      @if ($type == 8) {
+        background-color: map-get($map: $theme, $key: background-select-triangle)
+      }
+      @if ($type == 9) {
+        background-color: map-get($map: $theme, $key: background-menu-item)
+      }
+      @if ($type == 10) {
+        background-color: map-get($map: $theme, $key: primary-color)
+      }
+      @if ($type == 11) {
+        background-color: map-get($map: $theme, $key: font-echarts-tab-active-color)
+      }
+      @if ($type == 12) {
+        background-color: map-get($map: $theme, $key: background-home-active-color)
+      }
+      @if ($type == 13) {
+        background-color: map-get($map: $theme, $key: background-tree-color)
+      }
+      @if ($type == 14) {
+        background-color: map-get($map: $theme, $key: background-date-active-color)
+      }
+      @if ($type == 15) {
+        background-color: map-get($map: $theme, $key: background-date-range-color)
+      }
+    }
+  }
+}
+
+/**
+  边框颜色
+  参数：0: 主色边框 1: form表单元素(input,select) 边框  2: 表单校验错误信息提示边框
+       3. tab标签头部边框 4: 表格内容(td)边框 5. gis地图边框
+ */
+@mixin border-color-theme($type: 1, $direction: null, $width: 1Px, $style: solid) {
+  @each $themename, $theme in $themes {
+    [data-theme=#{$themename}] & {
+      @if ($direction == null) {
+        @if ($type == 0) {
+          border: $width $style map-get($map: $theme, $key: primary-color);
+        }
+        @if ($type == 1) {
+          border: $width $style map-get($map: $theme, $key: border-input);
+        }
+        @if ($type == 2) {
+          border: $width $style map-get($map: $theme, $key: border-input-error);
+        }
+        @if ($type == 3) {
+          border: $width $style map-get($map: $theme, $key: border-tab-header);
+        }
+        @if ($type == 4) {
+          border: $width $style map-get($map: $theme, $key: border-table-td);
+        }
+        @if ($type == 5) {
+          border: $width $style map-get($map: $theme, $key: border-button-cancel);
+        }
+        @if ($type == 6) {
+          border: $width $style map-get($map: $theme, $key: border-map);
+        }
+        @if ($type == 7) {
+          border: $width $style map-get($map: $theme, $key: border-login-input);
+        }
+        @if ($type == 8) {
+          border: $width $style map-get($map: $theme, $key: border-user-select);
+        }
+        @if ($type == 9) {
+          border: $width $style map-get($map: $theme, $key: border-select-triangle);
+        }
+      } @else {
+        @if ($type == 0) {
+          border-#{$direction}: $width $style map-get($map: $theme, $key: primary-color);
+        }
+        @if ($type == 1) {
+          border-#{$direction}: $width $style map-get($map: $theme, $key: border-input);
+        }
+        @if ($type == 2) {
+          border-#{$direction}: $width $style map-get($map: $theme, $key: border-input-error);
+        }
+        @if ($type == 3) {
+          border-#{$direction}: $width $style map-get($map: $theme, $key: border-tab-header);
+        }
+        @if ($type == 4) {
+          border-#{$direction}: $width $style map-get($map: $theme, $key: border-table-td);
+        }
+        @if ($type == 5) {
+          border-#{$direction}: $width $style map-get($map: $theme, $key: border-button-cancel);
+        }
+        @if ($type == 6) {
+          border-#{$direction}: $width $style map-get($map: $theme, $key: border-map);
+        }
+        @if ($type == 7) {
+          border-#{$direction}: $width $style map-get($map: $theme, $key: border-login-input);
+        }
+        @if ($type == 8) {
+          border-#{$direction}: $width $style map-get($map: $theme, $key: border-user-select);
+        }
+        @if ($type == 9) {
+          border-#{$direction}: $width $style map-get($map: $theme, $key: border-select-triangle);
+        }
+      }
+    }
+  }
+}
+
+// 阴影
+@mixin box-shadow-theme($type: 1, $x: 0, $y: 0, $blur: 0, $spread: 0) {
+  @each $themename, $theme in $themes {
+    [data-theme=#{$themename}] & {
+      @if ($type == 1) {
+        box-shadow: $x $y $blur $spread map-get($map: $theme, $key: shadow-select);
+      }
+      @if ($type == 2) {
+        box-shadow: $x $y $blur $spread map-get($map: $theme, $key: shadow-home-menu);
+      }
+      @if ($type == 3) {
+        box-shadow: $x $y $blur $spread map-get($map: $theme, $key: shadow-menu-item);
+      }
+    }
+  }
+}
+

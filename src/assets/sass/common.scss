@@ -1,0 +1,59 @@
+/* 公共样式 */
+html, body {
+	width: 100%;
+	height: 100%;
+	box-sizing: border-box;
+	font-family: 'microsoft Yahei';
+}
+
+.fl{
+	float: left;
+}
+.fr{
+	float: right;
+}
+
+// 清除浮动
+.clearfix:after {
+	content: "";
+	display: block;
+	line-height: 0;
+	height: 0;
+	visibility: hidden;
+	clear: both;
+}
+
+.clearfix {
+	zoom: 0;
+}
+
+// 文本对齐方式
+.tx-left {
+	text-align: left;
+}
+  
+.tx-right {
+	text-align: right;
+}
+  
+.tx-center {
+	text-align: center;
+}
+
+// 文本溢出显示省略号
+.tx-ellipsis {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap
+}
+  
+  // 下划线
+.tx-underline {
+	cursor: pointer;
+	text-decoration: underline;
+}
+
+// 鼠标手势
+.hand {
+	cursor: pointer;
+}

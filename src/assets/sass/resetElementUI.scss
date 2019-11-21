@@ -1,0 +1,29 @@
+
+/* Dropdown 下拉菜单-Start */
+.el-dropdown{
+	cursor: pointer;
+}
+.el-dropdown-menu {
+	@include bg-color-theme(7);
+    @include box-shadow-theme(1, 0, 0, 18px, 3px);
+	border: none;
+	.popper__arrow {
+		border-bottom-color: transparent !important;
+		border-top-color: transparent !important;
+	}
+	.el-dropdown-menu__item {
+		@include font-color-theme(2);
+		text-align: center;
+	}
+	.el-dropdown-menu__item:hover {
+		background: transparent;
+		@include font-color-theme(1);
+	}
+	.popper__arrow{
+		transform: translateX(-50%);
+		&:after{
+			@include border-color-theme(9, bottom, 5px);
+		}
+	}
+}
+/* Dropdown 下拉菜单-End */

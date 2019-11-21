@@ -1,0 +1,252 @@
+// 字体颜色
+$font-color-theme: #00FFFF; //字体主题颜色默认
+$font-color-theme1: #FFF; //字体主题颜色1
+$font-color-theme2: #FFF; //字体主题颜色2
+$font-color-theme3: #FFF; //字体主题颜色3
+
+//背景颜色
+$background-color-theme: #001C3B; //背景主题颜色默认
+$background-color-theme1: #0B1649; //背景主题颜色1
+$background-color-theme2: #20246E; //背景主题颜色2
+$background-color-theme3: #F6F9FD; //背景主题颜色3
+
+// 边框颜色
+$border-color-theme: #001C3B;
+$border-color-theme1: #FFF;
+$border-color-theme2: #FFF;
+$border-color-theme3: #FFF;
+
+//默认主题
+$default-theme: (
+  //字体
+  primary-color: #00FFFF, // 主色
+  font-default-color: #CADDFF, // 默认字体颜色
+  font-th-color: #B7CBED, // 标题(表格、面包屑、tab)字体颜色
+  font-td-color: #C4D7FA, // 内容(表单信息、表格内容)字体颜色
+  font-error-color: #F36A5A, // 错误信息(提示信息)字体颜色
+  font-search-color: #023053, // 按钮(搜索、保存、确定、主页菜单)字体颜色
+  font-avatar-color: rgba(130,132,134,0.6), // 用户头像字体颜色
+  font-warn-color: #F3D752, // 警告文字颜色
+  font-login-input-color: #606266, // 登录input字体颜色
+  font-date-color: #B7CBED, // 日期时间插件字体颜色
+  font-nav-color: #FFFFFF, // 导航菜单字体颜色
+  font-nav-active-color: #00FFFF, // 导航菜单选中字体颜色
+  font-echarts-tip-color: #7D97BA, // 统计图标题信息字体颜色
+  font-select-active: #001C3B, // 下拉框选中字体颜色
+  font-echarts-icon-color: #CADDFF, // 统计图图标字体颜色
+  font-echarts-tab-color: #CADDFF, // 统计图tab头部字体颜色
+  font-echarts-tab-active-color: #00FFFF, // 统计图tab头部选中字体颜色
+  font-home-color: #CADDFF, // 主页菜单字体颜色
+  font-home-active-color: #001C3B, // 主页菜单选中字体颜色
+  font-map-button-color: #001C3B, // 地图放大按钮字体颜色
+
+  //背景颜色
+  background-system: #001C3B, // 系统背景色
+  background-card: #00254D, // 区域内容背景色
+  background-table-th: #345170, // 表格标题背景色
+  background-dialog-title: #203853, // 弹窗(表格)标题背景色
+  background-dialog-body: #001C3B, // 弹窗内容背景色
+  background-button-error: #FF5E51, // 删除按钮背景色
+  background-select: #001C3B, // 下拉框背景颜色
+  background-select-triangle: #001C3B, // 下拉框小三角背景颜色
+  background-menu-item: rgba(183,217,255,0.25), // 单个菜单背景颜色
+  background-home-active-color: #00FFFF, // 主页菜单选中背景颜色
+  background-tree-color: #0F2D4E, // tree树形结构背景颜色
+  background-date-active-color: #00FFFF, // date日期选中背景色
+  background-date-range-color: rgba(255,255,255,0.2), // date日期时间段选中背景色
+
+  //边框颜色
+  border-input: #B7CBED, // form表单元素(input,select) 边框
+  border-input-error: #FF5E51, // 表单校验错误信息提示边框
+  border-tab-header: #314F6B, // tab头部边框颜色
+  border-table-td: #06395C, // 表格内容(td)边框颜色
+  border-button-cancel: #9AB3D7, // 取消、撤回按钮边框颜色
+  border-map: #06395C, // gis地图边框颜色
+  border-login-input: rgba(0,154,254,0.2), // 登录按钮边框
+  border-user-select: #556E8A, // 用户信息下拉框边框
+  border-select-triangle: #001C3B, // 下拉框小三角边框颜色
+
+  // 阴影
+  shadow-select: #022B4F, // 下拉框阴影
+  shadow-home-menu: rgba(0,246,247,0.06), // 主页菜单阴影
+  shadow-menu-item: rgba(23,128,224,0.16), // 单个菜单阴影
+);
+
+// 海洋之心
+$theme-1: (
+  //字体
+  primary-color: #009AFE, // 主色
+  font-default-color: #8F9AAE, // 默认字体颜色
+  font-th-color: #677897, // 标题(表格、面包屑、tab)字体颜色
+  font-td-color: #8F9AAE, // 内容(表单信息、表格内容)字体颜色
+  font-error-color: #F36A5A, // 错误信息(提示信息)字体颜色
+  font-search-color: #FFFFFF, // 按钮(搜索、保存、确定、主页菜单)字体颜色
+  font-avatar-color: #FFFFFF, // 用户头像字体颜色
+  font-warn-color: #F3D752, // 警告文字颜色
+  font-login-input-color: #606266, // 登录input字体颜色
+  font-date-color: #8F9AAE, // 日期时间插件字体颜色
+  font-nav-color: #FFFFFF, // 导航菜单字体颜色
+  font-nav-active-color: #FFFFFF, // 导航菜单选中字体颜色
+  font-echarts-tip-color: #7D97BA, // 统计图标题信息字体颜色
+  font-select-active: #FFFFFF, // 下拉框选中字体颜色
+  font-echarts-icon-color: #FFFFFF, // 统计图图标字体颜色
+  font-echarts-tab-color: #FFFFFF, // 统计图tab头部字体颜色
+  font-echarts-tab-active-color: #FFFFFF, // 统计图tab头部选中字体颜色
+  font-home-color: #FFFFFF, // 主页菜单字体颜色
+  font-home-active-color: #009AFE, // 主页菜单选中字体颜色
+  font-map-button-color: #BDBDBD, // 地图放大按钮字体颜色
+
+  //背景颜色
+  background-system: #096DD9, // 系统背景色
+  background-card: #FFFFFF, // 区域内容背景色
+  background-table-th: #F1F1F1, // 表格标题背景色
+  background-dialog-title: #F1F1F1, // 弹窗(表格)标题背景色
+  background-dialog-body: #FFFFFF, // 弹窗内容背景色
+  background-button-error: #FF5E51, // 删除按钮背景色
+  background-select: #FFFFFF, // 下拉框背景颜色
+  background-select-triangle: #FFFFFF, // 下拉框小三角背景颜色
+  background-menu-item: #b7d9ff40, // 单个菜单背景颜色
+  background-home-active-color: #FFFFFF, // 主页菜单选中背景颜色
+  background-tree-color: #f7f6f6, // tree树形结构背景颜色
+  background-date-active-color: #009AFE, // date日期选中背景色
+  background-date-range-color: rgba(222,222,222,0.4), // date日期时间段选中背景色
+
+  //边框颜色
+  border-input: #CBCBCB, // form表单元素(input,select) 边框
+  border-input-error: #FF5E51, // 表单校验错误信息提示边框
+  border-tab-header: #EEEEEE, // tab头部边框颜色
+  border-table-td: #E8E8E8, // 表格内容(td)边框颜色
+  border-button-cancel: #9AB3D7, // 取消、撤回按钮边框颜色
+  border-map: #57A8FF, // gis地图边框颜色
+  border-login-input: rgba(0,154,254,0.2), // 登录按钮边框
+  border-user-select: #CBCBCB, // 用户信息下拉框边框
+  border-select-triangle: #FFFFFF, // 下拉框小三角边框颜色
+
+  // 阴影
+  shadow-select: rgba(238,238,238,0.57), // 下拉框阴影
+  shadow-home-menu: rgba(4,4,4,0.13), // 主页菜单阴影
+  shadow-menu-item: #dad8d8, // 单个菜单阴影
+);
+
+// 水晶之幻
+$theme-2: (
+  //字体
+  primary-color: #36CFC9, // 主色
+  font-default-color: #8F9AAE, // 默认字体颜色
+  font-th-color: #677897, // 标题(表格、面包屑、tab)字体颜色
+  font-td-color: #8F9AAE, // 内容(表单信息、表格内容)字体颜色
+  font-error-color: #F36A5A, // 错误信息(提示信息)字体颜色
+  font-search-color: #FFFFFF, // 按钮(搜索、保存、确定、主页菜单)字体颜色
+  font-avatar-color: #FFFFFF, // 用户头像字体颜色
+  font-warn-color: #F3D752, // 警告文字颜色
+  font-login-input-color: #606266, // 登录input字体颜色
+  font-date-color: #8F9AAE, // 日期时间插件字体颜色
+  font-nav-color: #FFFFFF, // 导航菜单字体颜色
+  font-nav-active-color: #FFFFFF, // 导航菜单选中字体颜色
+  font-echarts-tip-color: #7D97BA, // 统计图标题信息字体颜色
+  font-select-active: #FFFFFF, // 下拉框选中字体颜色
+  font-echarts-icon-color: #FFFFFF, // 统计图图标字体颜色
+  font-echarts-tab-color: #FFFFFF, // 统计图tab头部字体颜色
+  font-echarts-tab-active-color: #FFFFFF, // 统计图tab头部选中字体颜色
+  font-home-color: #FFFFFF, // 主页菜单字体颜色
+  font-home-active-color: #36CFC9, // 主页菜单选中字体颜色
+  font-map-button-color: #BDBDBD, // 地图放大按钮字体颜色
+
+  //背景颜色
+  background-system: #009EB1, // 系统背景色
+  background-card: #FFFFFF, // 区域内容背景色
+  background-table-th: #F1F1F1, // 表格标题背景色
+  background-dialog-title: #F1F1F1, // 弹窗(表格)标题背景色
+  background-dialog-body: #FFFFFF, // 弹窗内容背景色
+  background-button-error: #FF5E51, // 删除按钮背景色
+  background-select: #FFFFFF, // 下拉框背景颜色
+  background-select-triangle: #FFFFFF, // 下拉框小三角背景颜色
+  background-menu-item: #b7d9ff40, // 单个菜单背景颜色
+  background-home-active-color: #FFFFFF, // 主页菜单选中背景颜色
+  background-tree-color: #f7f6f6, // tree树形结构背景颜色
+  background-date-active-color: #36CFC9, // date日期选中背景色
+  background-date-range-color: rgba(222,222,222,0.4), // date日期时间段选中背景色
+
+  //边框颜色
+  border-input: #CBCBCB, // form表单元素(input,select) 边框
+  border-input-error: #FF5E51, // 表单校验错误信息提示边框
+  border-tab-header: #EEEEEE, // tab头部边框颜色
+  border-table-td: #E8E8E8, // 表格内容(td)边框颜色
+  border-button-cancel: #9AB3D7, // 取消、撤回按钮边框颜色
+  border-map: #56F0EB, // gis地图边框颜色
+  border-login-input: rgba(0,154,254,0.2), // 登录按钮边框
+  border-user-select: #CBCBCB, // 用户信息下拉框边框
+  border-select-triangle: #FFFFFF, // 下拉框小三角边框颜色
+
+  // 阴影
+  shadow-select: rgba(238,238,238,0.57), // 下拉框阴影
+  shadow-home-menu: rgba(4,4,4,0.13), // 主页菜单阴影
+  shadow-menu-item: #dad8d8, // 单个菜单阴影
+);
+
+// 紫禁之巅
+$theme-3: (
+  //字体
+  primary-color: #7E49FF, // 主色
+  font-default-color: #8F9AAE, // 默认字体颜色
+  font-th-color: #677897, // 标题(表格、面包屑、tab)字体颜色
+  font-td-color: #8F9AAE, // 内容(表单信息、表格内容)字体颜色
+  font-error-color: #F36A5A, // 错误信息(提示信息)字体颜色
+  font-search-color: #FFFFFF, // 按钮(搜索、保存、确定、主页菜单)字体颜色
+  font-avatar-color: #FFFFFF, // 用户头像字体颜色
+  font-warn-color: #F3D752, // 警告文字颜色
+  font-login-input-color: #606266, // 登录input字体颜色
+  font-date-color: #8F9AAE, // 日期时间插件字体颜色
+  font-nav-color: #FFFFFF, // 导航菜单字体颜色
+  font-nav-active-color: #FFFFFF, // 导航菜单选中字体颜色
+  font-echarts-tip-color: #7D97BA, // 统计图标题信息字体颜色
+  font-select-active: #FFFFFF, // 下拉框选中字体颜色
+  font-echarts-icon-color: #FFFFFF, // 统计图图标字体颜色
+  font-echarts-tab-color: #FFFFFF, // 统计图tab头部字体颜色
+  font-echarts-tab-active-color: #FFFFFF, // 统计图tab头部选中字体颜色
+  font-home-color: #FFFFFF, // 主页菜单字体颜色
+  font-home-active-color: #7E49FF, // 主页菜单选中字体颜色
+  font-map-button-color: #BDBDBD, // 地图放大按钮字体颜色
+
+  //背景颜色
+  background-system: #512DA8, // 系统背景色
+  background-card: #FFFFFF, // 区域内容背景色
+  background-table-th: #F1F1F1, // 表格标题背景色
+  background-dialog-title: #F1F1F1, // 弹窗(表格)标题背景色
+  background-dialog-body: #FFFFFF, // 弹窗内容背景色
+  background-button-error: #FF5E51, // 删除按钮背景色
+  background-select: #FFFFFF, // 下拉框背景颜色
+  background-select-triangle: #FFFFFF, // 下拉框小三角背景颜色
+  background-menu-item: #b7d9ff40, // 单个菜单背景颜色
+  background-home-active-color: #FFFFFF, // 主页菜单选中背景颜色
+  background-tree-color: #f7f6f6, // tree树形结构背景颜色
+  background-date-active-color: #512DA8, // date日期选中背景色
+  background-date-range-color: rgba(222,222,222,0.4), // date日期时间段选中背景色
+
+  //边框颜色
+  border-input: #CBCBCB, // form表单元素(input,select) 边框
+  border-input-error: #FF5E51, // 表单校验错误信息提示边框
+  border-tab-header: #EEEEEE, // tab头部边框颜色
+  border-table-td: #E8E8E8, // 表格内容(td)边框颜色
+  border-button-cancel: #9AB3D7, // 取消、撤回按钮边框颜色
+  border-map: #906AEA, // gis地图边框颜色
+  border-login-input: rgba(0,154,254,0.2), // 登录按钮边框
+  border-user-select: #CBCBCB, // 用户信息下拉框边框
+  border-select-triangle: #FFFFFF, // 下拉框小三角边框颜色
+
+  // 阴影
+  shadow-select: rgba(238,238,238,0.57), // 下拉框阴影
+  shadow-home-menu: rgba(4,4,4,0.13), // 主页菜单阴影
+  shadow-menu-item: #dad8d8, // 单个菜单阴影
+);
+
+//定义映射集合
+$themes: (
+  theme: $default-theme,
+  theme1: $theme-1,
+  theme2: $theme-2,
+  theme3: $theme-3
+);
+
+
+
