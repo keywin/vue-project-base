@@ -6,10 +6,10 @@
 <template>
     <div class="footer">
 		 <p>
-			公司地址：西藏拉萨经济技术开发区林琼岗东一路7号西欣大厦512号
-			服务地址：北京市朝阳区北苑路甲13号院2号楼新纪元大厦2102室
+			公司地址：发送到答复大厦512号
+			服务地址：北京市朝阳区股份第三个非的故事厦2102室
 		</p>
-		<p>Copyright © 2018 西藏朗明. All Rights Reserved   藏ICP备18000272号</p>
+		<p>Copyright © 2018 史蒂夫. All Rights Reserved   藏ICP备180045682号</p>
 	</div>
 </template>
 <script>
