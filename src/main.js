@@ -8,6 +8,8 @@ import ElementUI from 'element-ui'
 
 import PerfectScrollbar from 'perfect-scrollbar' // 滚动条插件
 
+import http_axios from '@/api/http_axios.js'
+
 // 样式
 import '@/assets/iconfont/iconfont.css'
 import 'element-ui/lib/theme-chalk/index.css'
@@ -17,6 +19,8 @@ import 'perfect-scrollbar/css/perfect-scrollbar.css' // 滚动条插件
 Vue.config.productionTip = false
 
 Vue.use(ElementUI)
+
+Vue.prototype.$http_axios = http_axios
 
 const perfectScroll = (el) => {
 	if (el._ps_ instanceof PerfectScrollbar) {

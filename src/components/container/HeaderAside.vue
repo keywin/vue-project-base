@@ -7,14 +7,14 @@
 	<!-- 导航 -->
 	<div class="header-aside-el-menu-foo">
 		<el-scrollbar style="height: 100%;">
-			<el-menu default-active="1-4-1"  class="header-aside-el-menu" popper-class="header-aside-el-menu" :collapse="isCollapse">
+			<el-menu default-active="comments/resetelmui_style"  class="header-aside-el-menu" popper-class="header-aside-el-menu" :collapse="isCollapse">
 				<el-submenu index="1">
 					<template slot="title">
 						<i class="el-icon-location"></i>
 						<span slot="title">组件</span>
 					</template>
 					<el-menu-item-group>
-						<el-menu-item index="1-1"><router-link to='/comments/resetelmui_style' tag="span">Elem样式修改</router-link></el-menu-item>
+						<el-menu-item index="comments/resetelmui_style"><router-link to='/comments/resetelmui_style' tag="span">Elem样式修改</router-link></el-menu-item>
 						<el-menu-item index="1-2">Elem组件二次封装</el-menu-item>
 						<el-menu-item index="1-3">我的组件</el-menu-item>
 						<el-menu-item index="1-4">选项1</el-menu-item>

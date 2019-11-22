@@ -11,6 +11,7 @@ export default new Router({
 			path: '/',
 			name: 'Home',
 			component: Home,
+			redirect: 'comments/resetelmui_style',
 			children: [
 				{
 					path: '/comments/resetelmui_style',

@@ -81,6 +81,7 @@
 	</div>
 </template>
 <script>
+import axios from 'axios'
 export default {
     name: "Button",
     data() {
@@ -147,7 +148,11 @@ export default {
     components: {},
     created() {},
     methods: {},
-    mounted() {},
+    mounted() {
+		this.$http_axios('/api/datalist', {}, 'get').then(res => {
+			console.log(res)
+		})
+	},
     updated() {},
     destroyed() {}
 };
