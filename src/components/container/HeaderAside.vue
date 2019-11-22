@@ -14,19 +14,10 @@
 						<span slot="title">组件</span>
 					</template>
 					<el-menu-item-group>
-						<el-submenu index="1-1">
-							<span slot="title">Elem样式修改</span>
-							<el-menu-item index="1-1-1"><router-link to='/comments/resetelmui_pack/button' tag="span">Button 按钮</router-link></el-menu-item>
-						</el-submenu>
-						<el-submenu index="2-1">
-							<span slot="title">Elem组件二次封装</span>
-							<el-menu-item index="2-1-1">Button 按钮</el-menu-item>
-						</el-submenu>
-						<el-submenu index="3-1">
-							<span slot="title">我的组件</span>
-							<el-menu-item index="3-1-1">Button 按钮</el-menu-item>
-						</el-submenu>
-						<el-menu-item index="4-1">选项1</el-menu-item>
+						<el-menu-item index="1-1"><router-link to='/comments/resetelmui_style' tag="span">Elem样式修改</router-link></el-menu-item>
+						<el-menu-item index="1-2">Elem组件二次封装</el-menu-item>
+						<el-menu-item index="1-3">我的组件</el-menu-item>
+						<el-menu-item index="1-4">选项1</el-menu-item>
 					</el-menu-item-group>
 				</el-submenu>
 				<el-submenu index="2">

@@ -6,14 +6,59 @@ import router from './router'
 
 import ElementUI from 'element-ui'
 
+import PerfectScrollbar from 'perfect-scrollbar' // 滚动条插件
+
 // 样式
 import '@/assets/iconfont/iconfont.css'
 import 'element-ui/lib/theme-chalk/index.css'
 import '@/assets/sass/index.scss'
+import 'perfect-scrollbar/css/perfect-scrollbar.css' // 滚动条插件
 
 Vue.config.productionTip = false
 
 Vue.use(ElementUI)
+
+const perfectScroll = (el) => {
+	if (el._ps_ instanceof PerfectScrollbar) {
+		el._ps_.update()
+	} else {
+		el._ps_ = new PerfectScrollbar(el, {
+			suppressScrollX: true
+		})
+	}
+}
+Vue.directive('scrollBar', {
+	inserted(el, binding) {
+		const { arg } = binding
+		if (arg === 'table') {
+			el = el.querySelector('.el-table__body-wrapper')
+			if (!el) {
+				return console.warn('未发现className为el-table__body-wrapper的dom')
+			}
+		}
+		const rules = ['fixed', 'absolute', 'relative']
+		if (!rules.includes(window.getComputedStyle(el, null).position)) {
+			console.error(`perfect-scrollbar所在的容器的position属性必须是以下之一：${rules.join('、')}`)
+		}
+		perfectScroll(el)
+	},
+	componentUpdated(el, binding, vnode) {
+		const { arg } = binding
+		if (arg === 'table') {
+			el = el.querySelector('.el-table__body-wrapper')
+			if (!el) {
+				return console.warn('未发现className为el-table__body-wrapper的dom')
+			}
+		}
+		vnode.context.$nextTick(() => {
+				try {
+					perfectScroll(el)
+				} catch (error) {
+					console.error(error)
+				}
+			}
+		)}
+})
 
 /* eslint-disable no-new */
 new Vue({

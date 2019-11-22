@@ -57,3 +57,12 @@ html, body {
 .hand {
 	cursor: pointer;
 }
+
+// 主题字颜色
+.broject-base-color{
+	@include font-color-theme(1);
+}
+// 危险字颜色
+.broject-danger-color{
+	color: #F36A5A !important;
+}

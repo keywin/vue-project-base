@@ -159,72 +159,81 @@
   参数：0: 主色边框 1: form表单元素(input,select) 边框  2: 表单校验错误信息提示边框
        3. tab标签头部边框 4: 表格内容(td)边框 5. gis地图边框
  */
-@mixin border-color-theme($type: 1, $direction: null, $width: 1Px, $style: solid) {
+@mixin border-color-theme($type: 1, $direction: null, $width: 1Px, $style: solid, $color: null) {
   @each $themename, $theme in $themes {
     [data-theme=#{$themename}] & {
-      @if ($direction == null) {
-        @if ($type == 0) {
-          border: $width $style map-get($map: $theme, $key: primary-color);
-        }
-        @if ($type == 1) {
-          border: $width $style map-get($map: $theme, $key: border-input);
-        }
-        @if ($type == 2) {
-          border: $width $style map-get($map: $theme, $key: border-input-error);
-        }
-        @if ($type == 3) {
-          border: $width $style map-get($map: $theme, $key: border-tab-header);
-        }
-        @if ($type == 4) {
-          border: $width $style map-get($map: $theme, $key: border-table-td);
-        }
-        @if ($type == 5) {
-          border: $width $style map-get($map: $theme, $key: border-button-cancel);
-        }
-        @if ($type == 6) {
-          border: $width $style map-get($map: $theme, $key: border-map);
-        }
-        @if ($type == 7) {
-          border: $width $style map-get($map: $theme, $key: border-login-input);
-        }
-        @if ($type == 8) {
-          border: $width $style map-get($map: $theme, $key: border-user-select);
-        }
-        @if ($type == 9) {
-          border: $width $style map-get($map: $theme, $key: border-select-triangle);
-        }
-      } @else {
-        @if ($type == 0) {
-          border-#{$direction}: $width $style map-get($map: $theme, $key: primary-color);
-        }
-        @if ($type == 1) {
-          border-#{$direction}: $width $style map-get($map: $theme, $key: border-input);
-        }
-        @if ($type == 2) {
-          border-#{$direction}: $width $style map-get($map: $theme, $key: border-input-error);
-        }
-        @if ($type == 3) {
-          border-#{$direction}: $width $style map-get($map: $theme, $key: border-tab-header);
-        }
-        @if ($type == 4) {
-          border-#{$direction}: $width $style map-get($map: $theme, $key: border-table-td);
-        }
-        @if ($type == 5) {
-          border-#{$direction}: $width $style map-get($map: $theme, $key: border-button-cancel);
-        }
-        @if ($type == 6) {
-          border-#{$direction}: $width $style map-get($map: $theme, $key: border-map);
-        }
-        @if ($type == 7) {
-          border-#{$direction}: $width $style map-get($map: $theme, $key: border-login-input);
-        }
-        @if ($type == 8) {
-          border-#{$direction}: $width $style map-get($map: $theme, $key: border-user-select);
-        }
-        @if ($type == 9) {
-          border-#{$direction}: $width $style map-get($map: $theme, $key: border-select-triangle);
-        }
-      }
+		@if ($color != null) {
+			@if ($color == 7) {
+				border-#{$direction}-color: map-get($map: $theme, $key: border-select-triangle);
+			}
+			@if ($color == 9) {
+				border-#{$direction}-color: map-get($map: $theme, $key: border-select-triangle);
+			}
+		} @else {
+			@if ($direction == null) {
+				@if ($type == 0) {
+				  border: $width $style map-get($map: $theme, $key: primary-color);
+				}
+				@if ($type == 1) {
+				  border: $width $style map-get($map: $theme, $key: border-input);
+				}
+				@if ($type == 2) {
+				  border: $width $style map-get($map: $theme, $key: border-input-error);
+				}
+				@if ($type == 3) {
+				  border: $width $style map-get($map: $theme, $key: border-tab-header);
+				}
+				@if ($type == 4) {
+				  border: $width $style map-get($map: $theme, $key: border-table-td);
+				}
+				@if ($type == 5) {
+				  border: $width $style map-get($map: $theme, $key: border-button-cancel);
+				}
+				@if ($type == 6) {
+				  border: $width $style map-get($map: $theme, $key: border-map);
+				}
+				@if ($type == 7) {
+				  border: $width $style map-get($map: $theme, $key: border-login-input);
+				}
+				@if ($type == 8) {
+				  border: $width $style map-get($map: $theme, $key: border-user-select);
+				}
+				@if ($type == 9) {
+				  border: $width $style map-get($map: $theme, $key: border-select-triangle);
+				}
+			} @else {
+				@if ($type == 0) {
+				  border-#{$direction}: $width $style map-get($map: $theme, $key: primary-color);
+				}
+				@if ($type == 1) {
+				  border-#{$direction}: $width $style map-get($map: $theme, $key: border-input);
+				}
+				@if ($type == 2) {
+				  border-#{$direction}: $width $style map-get($map: $theme, $key: border-input-error);
+				}
+				@if ($type == 3) {
+				  border-#{$direction}: $width $style map-get($map: $theme, $key: border-tab-header);
+				}
+				@if ($type == 4) {
+				  border-#{$direction}: $width $style map-get($map: $theme, $key: border-table-td);
+				}
+				@if ($type == 5) {
+				  border-#{$direction}: $width $style map-get($map: $theme, $key: border-button-cancel);
+				}
+				@if ($type == 6) {
+				  border-#{$direction}: $width $style map-get($map: $theme, $key: border-map);
+				}
+				@if ($type == 7) {
+				  border-#{$direction}: $width $style map-get($map: $theme, $key: border-login-input);
+				}
+				@if ($type == 8) {
+				  border-#{$direction}: $width $style map-get($map: $theme, $key: border-user-select);
+				}
+				@if ($type == 9) {
+				  border-#{$direction}: $width $style map-get($map: $theme, $key: border-select-triangle);
+				}
+			}
+		}
     }
   }
 }

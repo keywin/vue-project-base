@@ -6,7 +6,6 @@
 <template>
     <div class="main">
 		<el-scrollbar style="height: 100%;">
-			主页面
 			<router-view />
 		</el-scrollbar>
 		

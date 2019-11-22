@@ -27,3 +27,181 @@
 	}
 }
 /* Dropdown 下拉菜单-End */
+
+/* Button 按钮-Start */
+// 默认按钮
+.el-button--default{
+	padding: 7px 10px;
+	background-color: transparent;
+	@include font-color-theme(1);
+	@include border-color-theme(0);
+	&:hover,
+	&:active,
+	&:focus {
+		@include font-color-theme(6);
+		@include bg-color-theme(10);
+		@include border-color-theme(0);
+	}
+	&.is-circle{
+		padding: 7px;
+	}
+}
+// 危险按钮
+.el-button--danger{
+	background-color: transparent;
+	@include font-color-theme(5);
+	@include border-color-theme(2);
+	&:hover,
+	&:active,
+	&:focus {
+		color: #FFF;
+		@include bg-color-theme(6);
+		@include border-color-theme(2);
+	}
+	&.is-circle{
+		padding: 7px;
+	}
+}
+// 主题文字按钮
+.el-button--text{
+	@include font-color-theme(1);
+}
+/* Button 按钮-End */
+
+/* input-Start */
+.el-input{
+	.el-input__inner {
+		@include font-color-theme(2);
+		@include border-color-theme(1);
+		background-color: transparent;
+		&:focus {
+			@include border-color-theme(0);
+		}
+	}
+}
+/* input-Start */
+
+/*单选框-Start*/
+	.el-radio{
+		// 默认
+		@include font-color-theme(2);
+		.el-radio__inner{
+			@include border-color-theme(1);
+			background: transparent;
+		}
+		// 选中
+		&.is-checked{
+			.el-radio__inner{
+				@include bg-color-theme(10);
+				&:after{
+					@include bg-color-theme(2);
+				}
+			}
+			.el-radio__label{
+				@include font-color-theme(1);
+			}
+		}
+	}
+/*单选框-End*/
+
+/*Checkbox-Start*/
+.el-checkbox{
+	// 默认
+	@include font-color-theme(2);
+	.el-checkbox__inner{
+		@include border-color-theme(1);
+		background: transparent;
+	}
+	// 选中
+	&.is-checked{
+		.el-checkbox__inner{
+			@include bg-color-theme(10);
+			@include border-color-theme(0);
+			&:after{
+				@include border-color-theme(3, right);
+				@include border-color-theme(3, bottom);
+			}
+		}
+		.el-checkbox__label{
+			@include font-color-theme(1);
+		}
+	}
+}
+
+/*Checkbox-End*/
+
+/*Select 选择器-Start*/
+.el-select-dropdown {
+	@include bg-color-theme(7);
+	@include border-color-theme(1);
+	.el-select-dropdown__item{
+		@include font-color-theme(2);
+		&.selected,
+		&.hover,
+		&:hover {
+			@include font-color-theme(6);
+			@include bg-color-theme(10);
+		}
+	}
+	&.el-popper[x-placement^=top]{
+		.popper__arrow::after{
+			@include border-color-theme(0, top, 0, 0, 9);
+		}
+	}
+	&.el-popper[x-placement^=bottom]{
+		.popper__arrow::after{
+			@include border-color-theme(0, bottom, 0, 0, 9);
+		}
+	}
+}
+/*Select 选择器-End*/
+
+/*table表格-Start*/
+.el-table{
+	background: transparent;
+	thead{
+		@include font-color-theme(3);
+		th{
+			@include bg-color-theme(3);
+		}
+		.is-leaf{
+			border-bottom: 0;
+		}
+	}
+	tbody{
+		@include font-color-theme(4);
+		tr{
+			background-color: transparent;
+			td{
+				border-bottom: 0;
+				background-color: transparent;
+			}
+			&:hover td,
+			&.hover-row>td{
+				background: transparent !important;
+			}
+		}
+	}
+	.el-table__fixed-right-patch{
+		border: 0;
+		@include bg-color-theme(3);
+	}
+	.ps__rail-y{
+		&.ps--clicking,
+		&:hover,
+		&:focus{
+			@include bg-color-theme(3);
+		}
+		.ps__thumb-y{
+			@include bg-color-theme(10);
+		}
+	}
+	&:before{
+		background: none;
+	}
+	.el-table__fixed-right, .el-table__fixed{
+		&:before{
+			background: none;
+		}
+	}
+}

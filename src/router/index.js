@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from '@/pages/Home.vue'
-import Button from '@/pages/components/resetElmUI_pack/Button.vue'
+import ResetElmUI_style from '@/pages/components/ResetElmUI_style.vue'
 
 Vue.use(Router)
 
@@ -13,9 +13,9 @@ export default new Router({
 			component: Home,
 			children: [
 				{
-					path: '/comments/resetelmui_pack/button',
-					name: 'Button',
-					component: Button
+					path: '/comments/resetelmui_style',
+					name: 'ResetElmUI_style',
+					component: ResetElmUI_style
 				}
 			]
 		}
