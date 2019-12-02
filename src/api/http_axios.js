@@ -2,22 +2,21 @@ import axios from 'axios'
 import {Notification, Loading,Message} from 'element-ui'
 
 import {baseURL} from './baseURL'
-console.log(baseURL)
-// import {getToken} from '@/utils/auth' // 获取token的方法
 
 // 请求超时时间
 axios.defaults.withCredentials = true
 axios.defaults.timeout = 1000 * 60 * 8 // 2分钟
+axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded;charset=UTF-8';
 
-// 后台接口地址
+// 根据环境自动切换地址
 if (process.env.NODE_ENV === 'development') {
-	
-	axios.defaults.baseURL = baseURL.baseURL
+	axios.defaults.baseURL = baseURL.url
 }
 if (process.env.NODE_ENV === 'production') {
 	axios.defaults.baseURL = baseURL.baseURL
 }
 
+// 加载动画相关
 let pageLoading = null;
 global.loaddingText='数据加载中...'
 
@@ -30,14 +29,11 @@ axios.interceptors.request.use(config => {
 		pageLoading = Loading.service({
 			fullscreen: true,
 			text: global.loaddingText,
-			spinner: 'el-icon-loading',
 			background: 'rgba(0, 0, 0, 0.7)'
 		})
 	}
-	const token = getToken() || null
-	if (token !== null && token !== undefined) { // 判断是否存在token，如果存在的话，则每个http header都加上token
-		config.headers['lumlord_token'] = token
-	}
+	const token = 'test-token-sfdhiojfdiojfnjvbhsfghasfdasruweqtoprtwitnrhnwfywtqewproiprtyenbnsdjkfgbsdafghdsgha'
+	token && (config.headers['token'] = token)
 	config.headers['Accept'] = 'application/json'
     return config
 }, err => {
@@ -48,7 +44,7 @@ axios.interceptors.request.use(config => {
 axios.interceptors.response.use(response => {
 	pageLoading && (pageLoading.close()); //关闭loading
 	if (response.status === 200) {
-		return response.data.code == 200 ? Promise.resolve(response) : Promise.reject(response)
+		return Promise.resolve(response)
 	} else {
 		return Promise.reject(response)
 	}
@@ -75,39 +71,26 @@ axios.interceptors.response.use(response => {
 	}
 })
 
-let http_axios = (url, params = {}, method = 'post', type = 0, responseType) => {
-	let headers = ['application/json;charset=UTF-8', 'multipart/form-data'][type] // [json格式, 文件上传格式]
-	let option = {
+export function http_axios (url, params = {}, method = 'post', type = 0, responseType)  {
+	let options = {
 		url,
 		method,
 		responseType, // 响应数据类型
-		// headers: { "Content-Type": headers }
+		headers: {
+			"Content-Type": ['application/json;charset=UTF-8', 'multipart/form-data'][type]
+		}
 	}
-	if (method === 'get') {
-		option.data = {params}
-	}
-	if (method === 'delete') {
-		option.data = params
-	}
-	if (method === 'post' || method === 'patch' || method === 'put') {
-		option.data = params
-	}
+	options.data = (method === 'get' ? {params}: params)
 	return new Promise((resolve, reject) => {
-		axios(option).then(res => {
+		axios(options).then(res => {
 			resolve(res.data)
 		}).catch(err => {
-			console.log(err)
-			// if (err.data.code == 500) {
-			// 	Message.error({
-			// 		duration: 2000,
-			// 		message: err.data.msg
-			// 	})
-			// } else {
-			// 	//  console.log(err.data.msg)
-			// }
-			reject(err.data)
+			Notification.error({
+				duration: 2000,
+				position: 'bottom-left',
+				message: err
+			})
+			reject(err)
 		})
 	})
 }
-
-export default http_axios

@@ -17,7 +17,7 @@ module.exports = {
 		  pathRewrite: {
 			'^/api': '' // 重写接口
 		  }
-		}
+		},
 	},
 
     // Various Dev Server settings

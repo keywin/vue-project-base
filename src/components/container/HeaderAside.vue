@@ -38,8 +38,8 @@
 						</el-submenu>
 						<el-submenu index="2-3">
 							<span slot="title">axios</span>
-							<el-menu-item index="2-3-1">选项1</el-menu-item>
-							<el-menu-item index="2-3-2">选项2</el-menu-item>
+							<el-menu-item index="2-3-1"><router-link to='/package/axios' tag="span">axios封装</router-link></el-menu-item>
+							<el-menu-item index="2-3-2"><router-link to='/package/statemanage' tag="span">状态码管理</router-link></el-menu-item>
 						</el-submenu>
 						<el-submenu index="2-4">
 							<span slot="title">api</span>

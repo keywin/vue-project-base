@@ -5,6 +5,12 @@
 -->
 <template>
     <div class="button">
+		<!-- <codemirror
+              ref="myCm"
+              :value="resJson"
+              :options="cmOptions"
+              class="code"
+            ></codemirror> -->
 		<el-row>
 			<el-col :span="24" class="title-color">按钮</el-col>
 			<el-button icon="el-icon-plus" size="mini">默认按钮</el-button>
@@ -81,11 +87,37 @@
 	</div>
 </template>
 <script>
-import axios from 'axios'
+// import axios from 'axios'
+
+// import aaa from '@/assets/json.json'
+
+// console.log(aaa)
+
+// import { codemirror } from 'vue-codemirror'
+//   require("codemirror/mode/python/python.js")
+//   require('codemirror/addon/fold/foldcode.js')
+//   require('codemirror/addon/fold/foldgutter.js')
+//   require('codemirror/addon/fold/brace-fold.js')
+//   require('codemirror/addon/fold/xml-fold.js')
+//   require('codemirror/addon/fold/indent-fold.js')
+//   require('codemirror/addon/fold/markdown-fold.js')
+//   require('codemirror/addon/fold/comment-fold.js')
 export default {
     name: "Button",
     data() {
         return {
+			// cmOptions: {
+			// 	value:'',
+			// 	theme:'rubyblue', //主题
+			// 	indentUnit:2,
+			// 	smartIndent:true,
+			// 	tabSize:4,
+			// 	readOnly:true, //只读
+			// 	showCursorWhenSelecting:true,
+			// 	lineNumbers:true, //是否显示行数
+			// 	firstLineNumber: 1
+			// },
+			// resJson: aaa,
 			input: '',
 			radio: 3,
 			cities: ['上海', '北京', '广州', '深圳'],
@@ -145,13 +177,32 @@ export default {
     props: [],
     watch: {},
     computed: {},
-    components: {},
+    components: {
+		// codemirror
+	},
     created() {},
     methods: {},
     mounted() {
-		this.$http_axios('/api/datalist', {}, 'get').then(res => {
-			console.log(res)
-		})
+		// let params = {
+		// 	enclosureName: null,
+		// 	page: {
+		// 		pageNum: 1,
+		// 		pageSize: 10
+		// 	},
+		// 	project: {
+		// 		projectName: null,
+		// 		projectStatus: null,
+		// 		relationState: null
+		// 	}
+		// }
+		// let params = {id: 6087057}
+		// this.$http_axios('/api/datalist', {}, 'get').then(res => {
+		// 	console.log(res)
+		// })
+		
+// this.$axios.get('/api/datalist').then((res) => {
+               
+//             })
 	},
     updated() {},
     destroyed() {}
