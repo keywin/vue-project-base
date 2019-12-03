@@ -5,7 +5,7 @@
 <template>
     <div class="vuex">
         <el-row>
-            <el-button icon="el-icon-sold-out" size="mini" @click="setUserInfo">vuex模块化 调用接口获取用户信息并存储, 可刷新</el-button>
+            <el-button icon="el-icon-sold-out" size="mini" @click="setUserInfo">vuex模块化 调用接口获取用户信息并存储, 支持刷新</el-button>
         </el-row>
         <el-row>
             <el-table :data="tableData" style="width: 100%">
