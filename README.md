@@ -39,7 +39,7 @@ npm install -g  nodemon
 # 在 /vue-project-base 下
 npm run dev
 
-# 在 /vue-project-base/server下
+# 在 /vue-project-base/server 下
 nodemon app
 ```
 
