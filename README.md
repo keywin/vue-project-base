@@ -7,7 +7,7 @@
 - [x] 初始化样式、公共样式类
 - [x] 按需修改Element-ui样式
 - [ ] 屏幕适配 ( pc )
-- [ ] vuex
+- [x] vuex模块化管理,支持刷新不丢数据
 - [x] axios二次封装, 添加拦截器, 统一状态管理
 - [x] 接口模块Api
 - [ ] 常用公共方法封装, 各种缓存取存
@@ -23,25 +23,26 @@
 
 ``` bash
 # install dependencies
-npm install
 
-# serve with hot reload at localhost:8080
+# 下载前端依赖
+cd vue-project-base
+
+npm i
+
+# express相关依赖
+npm i express-generator -g
+
+cd server
+
+npm i
+
+npm install -g  nodemon
+
+# 在 /vue-project-base 下
 npm run dev
 
-# build for production with minification
-npm run build
-
-# build for production and view the bundle analyzer report
-npm run build --report
-
-# run unit tests
-npm run unit
-
-# run e2e tests
-npm run e2e
-
-# run all tests
-npm test
+# 在 /vue-project-base/server下
+nodemon app
 ```
 
 For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
