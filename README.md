@@ -1,7 +1,5 @@
 # vue-project-base
 
-> vue-project-base
-
 - [ ] 兼容IE
 - [x] 换肤-主题切换(不仅仅是局部)
 - [x] 初始化样式、公共样式类
