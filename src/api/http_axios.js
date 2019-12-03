@@ -3,6 +3,8 @@ import {Notification, Loading,Message} from 'element-ui'
 
 import {baseURL} from './baseURL'
 
+import { stateCode } from './statemanage'
+
 // 请求超时时间
 axios.defaults.withCredentials = true
 axios.defaults.timeout = 1000 * 60 * 8 // 2分钟
@@ -51,22 +53,11 @@ axios.interceptors.response.use(response => {
 }, error => {
 	pageLoading && (pageLoading.close()); //关闭loading
 	if (error.response) {
-		switch (error.response.status) {
-		  	case 404:
-				Notification.error({
-					duration: 2000,
-					position: 'bottom-left',
-					message: '网络请求不存在'
-				})
-				break
-			default:
-				Notification.error({
-					duration: 2000,
-					position: 'bottom-left',
-					message: '服务器错误!'
-				})
-				break
-		}
+		// 状态码统一管理
+		Notification.error({
+			duration: 3000,
+			message: stateCode[error.response.status] || '服务器正在维护'
+		})
 		return Promise.reject(error) // 返回接口返回的错误信息
 	}
 })
@@ -85,11 +76,6 @@ export function http_axios (url, params = {}, method = 'post', type = 0, respons
 		axios(options).then(res => {
 			resolve(res.data)
 		}).catch(err => {
-			Notification.error({
-				duration: 2000,
-				position: 'bottom-left',
-				message: err
-			})
 			reject(err)
 		})
 	})

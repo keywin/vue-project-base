@@ -52,7 +52,6 @@
 	</div>
 </template>
 <script>
-import BasePagination from '@/components/BasePagination.vue'
 export default {
     name: "Page_01",
     data() {
@@ -68,9 +67,7 @@ export default {
     props: [],
     watch: {},
     computed: {},
-    components: {
-		BasePagination
-	},
+    components: {},
     created() {
 		this.getTableData(true)
 	},

@@ -7,21 +7,32 @@ var comJS = require('../public/javascripts/common.js')
 
 // 本地存储的datalist
 var datalist = require('../public/json/datalist.json')
+// 用户信息
+var userinfo = require('../public/json/userInfo.json')
 
 /* GET home page. */
 router.get('/login', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
+/* userInfo */
+router.post('/userinfo', (req, res) => {
+	let response = {
+		data: { userInfo: comJS.randomArrOne(userinfo) },
+		msg: '获取成功',
+		code: 200,
+		status: true
+	}
+	// setTimeout(() => {
+		res.send(response)
+	// }, 1000)
+})
+
 /* datalist */
 router.post('/datalist', (req, res) => {
 	// 默认每次返回10条
 	let params = req.body
-	// isNewData === true 重新请求数据
 	params.isNewData && (datalist = comJS.shuffle(datalist))
-	// currentPage 当前页
-	// pageSize 每页数据条数
-	// total 返回数据总条数
 	let list = datalist.slice((params.currentPage - 1) * params.pageSize, params.currentPage * params.pageSize)
 	let response = {
 		data: {
@@ -30,6 +41,20 @@ router.post('/datalist', (req, res) => {
 		},
 		msg: '获取成功',
 		status: true
+	}
+	setTimeout(() => {
+		res.send(response)
+	}, 1000)
+})
+
+/* 状态码体验 */
+router.post('/statetaste', (req, res) => {
+	let params = req.body
+	let response = {
+		data: 'testData',
+		msg: params.code == 200 ? '获取成功' : '获取失败',
+		code: params.code,
+		status: params.code == 200
 	}
 	setTimeout(() => {
 		res.send(response)

@@ -46,6 +46,19 @@
 		padding: 7px;
 	}
 }
+// 主要按钮
+.el-button--primary{
+	@include font-color-theme(6);
+	@include bg-color-theme(10);
+	@include border-color-theme(0);
+	// &:hover,
+	// &:active,
+	// &:focus {
+	// 	background-color: transparent;
+	// 	@include font-color-theme(1);
+	// 	@include border-color-theme(0);
+	// }
+}
 // 危险按钮
 .el-button--danger{
 	background-color: transparent;

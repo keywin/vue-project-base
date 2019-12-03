@@ -34,7 +34,7 @@
 			<el-dropdown>
 				<span class="el-dropdown-link">
 					<el-avatar size="medium" src="https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png" style="vertical-align: middle;"></el-avatar>
-					<span style="color: #fff;">keywin</span>
+					<span style="color: #fff;">{{ getUserInfo.username }}</span>
 				</span>
 				<el-dropdown-menu slot="dropdown">
 					<el-dropdown-item>奥运塔分区</el-dropdown-item>
@@ -46,6 +46,7 @@
 	</div>
 </template>
 <script>
+import {mapMutations, mapGetters} from 'vuex'
 let menuList = [
 	{
 		name: '灯效智控',
@@ -129,7 +130,9 @@ export default {
 		'isCollapse'
 	],
     watch: {},
-    computed: {},
+    computed: {
+		...mapGetters(['getUserInfo'])
+	},
     components: {},
     created() {},
     methods: {

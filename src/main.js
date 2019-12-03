@@ -1,16 +1,15 @@
-// The Vue build version to load with the `import` command
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
 import App from './App'
 import router from './router'
 
 import ElementUI from 'element-ui'
-
 import PerfectScrollbar from 'perfect-scrollbar' // 滚动条插件
 
 import {http_axios} from '@/api/http_axios.js'
 
-// import axios from 'axios'
+import Vuex from 'vuex'
+import store from './store'
 
 // 样式
 import '@/assets/iconfont/iconfont.css'
@@ -18,16 +17,12 @@ import 'element-ui/lib/theme-chalk/index.css'
 import '@/assets/sass/index.scss'
 import 'perfect-scrollbar/css/perfect-scrollbar.css' // 滚动条插件
 
-// // 网页code展示
-// import 'codemirror/lib/codemirror.css'
-// import 'codemirror/theme/rubyblue.css' 
-
 Vue.config.productionTip = false
 
 Vue.use(ElementUI)
+Vue.use(Vuex)
 
 Vue.prototype.$http_axios = http_axios
-// Vue.prototype.$axios = axios
 
 const perfectScroll = (el) => {
 	if (el._ps_ instanceof PerfectScrollbar) {
@@ -38,6 +33,7 @@ const perfectScroll = (el) => {
 		})
 	}
 }
+// 表格滚动条
 Vue.directive('scrollBar', {
 	inserted(el, binding) {
 		const { arg } = binding
@@ -71,10 +67,31 @@ Vue.directive('scrollBar', {
 		)}
 })
 
+/**
+ * 全局引入基础组件
+ * 文件名格式: /components/(或文件名)/Base***.vue
+ * eg: components/BasePagination.vue
+ * 则此文件夹下格式文件名格式相符的组件, 可以直接在页面中使用, 不需要再单独引用
+ */
+// 获取基础组件文件
+const requireComponents  = require.context('./components', true, /Base[a-zA-Z]+\.vue$/)
+requireComponents.keys().forEach(fileName => {
+	// 例 fileName: "./BasePagination.vue"
+	// 组件实例
+	const reqCom = requireComponents(fileName)
+	// 截取文件名作为组件名
+	let reqComName = fileName.split('.vue')[0].split('/')
+	// 考虑到可能存在文件夹/文件名的情况, 取最底级的文件名作为组件名
+	reqComName = reqComName[reqComName.length-1]
+	// 组件挂载
+	Vue.component(reqComName, reqCom.default || reqCom)
+})
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
   router,
+  store,
   components: { App },
   template: '<App/>'
 })

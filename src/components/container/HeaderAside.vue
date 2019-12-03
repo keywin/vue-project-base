@@ -15,7 +15,7 @@
 					</template>
 					<el-menu-item-group>
 						<el-menu-item index="comments/resetelmui_style"><router-link to='/comments/resetelmui_style' tag="span">Elem样式修改</router-link></el-menu-item>
-						<el-menu-item index="1-2">Elem组件二次封装</el-menu-item>
+						<el-menu-item index="1-2"><router-link to='/comments/resetelmui_pack' tag="span">Elem组件二次封装</router-link></el-menu-item>
 						<el-menu-item index="1-3">我的组件</el-menu-item>
 						<el-menu-item index="1-4">选项1</el-menu-item>
 					</el-menu-item-group>
@@ -41,16 +41,13 @@
 							<el-menu-item index="2-3-1"><router-link to='/package/axios' tag="span">axios封装</router-link></el-menu-item>
 							<el-menu-item index="2-3-2"><router-link to='/package/statemanage' tag="span">状态码管理</router-link></el-menu-item>
 						</el-submenu>
+						
 						<el-submenu index="2-4">
 							<span slot="title">api</span>
 							<el-menu-item index="2-4-1">选项1</el-menu-item>
 							<el-menu-item index="2-4-2">选项2</el-menu-item>
 						</el-submenu>
-						<el-submenu index="2-5">
-							<span slot="title">vuex</span>
-							<el-menu-item index="2-5-1">选项1</el-menu-item>
-							<el-menu-item index="2-5-2">选项2</el-menu-item>
-						</el-submenu>
+						<el-menu-item index="2-5"><router-link to='/package/vuex' tag="span">vuex</router-link></el-menu-item>
 					</el-menu-item-group>
 				</el-submenu>
 				<el-submenu index="3">
