@@ -1,4 +1,4 @@
-## vue-project-base
+## 支持
 
 - [ ] 兼容IE
 - [x] 换肤-主题切换(不仅仅是局部)
@@ -17,7 +17,7 @@
 - [x] 全屏
 - [ ] ...
 
-## Build Setup
+## 安装说明
 
 ``` bash
 # install dependencies
