@@ -23,23 +23,19 @@
 # install dependencies
 
 # 下载前端依赖
-cd vue-project-base
-
-npm i
-
-# express相关依赖
-npm i express-generator -g
-
-cd server
-
-npm i
-
-npm install -g  nodemon
-
 # 在 /vue-project-base 下
+cd vue-project-base
+npm i
+
 npm run dev
 
+# express相关依赖
 # 在 /vue-project-base/server 下
+npm i express-generator -g
+cd server
+npm i
+npm install -g  nodemon
+
 nodemon app
 ```
 
