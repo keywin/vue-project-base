@@ -7,18 +7,18 @@
     <div class="header">
 		<!-- logo -->
 		<div class="header-login">
-			<img src="@/assets/img/pic/logo.png" alt="" @click="changeCollapse" class="hand">
+			<img src="@/assets/img/icon/wolf.png" alt="" @click="changeCollapse" class="hand">
 			<span>点击logo控制侧边栏状态</span>
 		</div>
 		<div class="header-el-menu-foo">
 			<!-- 导航 -->
-			<el-menu :default-active="activeIndex" class="header-el-menu" mode="horizontal">
+			<!-- <el-menu :default-active="activeIndex" class="header-el-menu" mode="horizontal">
 				<el-submenu :index="item.name" v-for="(item, i) in menuList" :key="i" :popper-class="item.children && item.children.length == 0 ? '' : 'hasChildren'">
 					<template slot="title">{{ item.name }}</template>
 					<el-menu-item :index="item_sub.name" v-for="(item_sub, j) in item.children" :key="j">{{ item_sub.name }}</el-menu-item>
 				</el-submenu>
-			</el-menu>
-			<el-divider direction="vertical"></el-divider>
+			</el-menu> -->
+			<!-- <el-divider direction="vertical"></el-divider> -->
 			<span class="iconfont icon-zhuye"></span>
 			<span class="iconfont icon-xiaoxi hasXiaoxi" @click="showDrawerClick"></span>
 			<el-dropdown @command="themeChange">
@@ -31,10 +31,10 @@
 				</el-dropdown-menu>
 			</el-dropdown>
 			<i class="el-icon-full-screen" @click="handleFullScreen"></i>
-			<el-dropdown>
+			<el-dropdown class="userInfo">
 				<span class="el-dropdown-link">
 					<el-avatar size="medium" src="https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png" style="vertical-align: middle;"></el-avatar>
-					<span style="color: #fff;">{{ getUserInfo.username }}</span>
+					<span style="color: #fff;">{{ GET_USERINFO ? GET_USERINFO.username : 'keywin' }}</span>
 				</span>
 				<el-dropdown-menu slot="dropdown">
 					<el-dropdown-item>奥运塔分区</el-dropdown-item>
@@ -131,7 +131,7 @@ export default {
 	],
     watch: {},
     computed: {
-		...mapGetters(['getUserInfo'])
+		...mapGetters(['GET_USERINFO'])
 	},
     components: {},
     created() {},
@@ -268,9 +268,7 @@ export default {
 	.header-login{
 		img{
 			float: left;
-			width: 64px;
-			height: 64px;
-			margin-top: 8px;
+			margin: 23px 0 0 20px;
 		}
 		span{
 			float: left;
@@ -282,7 +280,8 @@ export default {
 	// 右侧操作(不含下拉)
 	.header-el-menu-foo{
 		display: flex;
-      	align-items: center;
+    align-items: center;
+		padding-right: 20px;
 		.header-el-menu{
 			top: auto !important;
 			border-bottom: 0;
@@ -321,9 +320,9 @@ export default {
 			margin-right: 20px;
 		}
 		.iconfont, .el-icon-full-screen{
-			margin-right: 10px;
+			margin-right: 15px;
 			color: #fff;
-			font-size: 18px;
+			font-size: 20px;
 			cursor: pointer;
 		}
 		.hasXiaoxi{

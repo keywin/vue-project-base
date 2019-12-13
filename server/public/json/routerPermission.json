@@ -1,0 +1,96 @@
+[
+	{
+		"id": "1",
+		"name": "组件",
+		"parentId": "0",
+		"menuUrl": "#",
+		"children": [
+			{
+				"id": "1-1",
+				"name": "Elem样式修改",
+				"parentId": "1",
+				"menuUrl": "/comments/resetelmui_style",
+				"children": []
+			},
+			{
+				"id": "1-2",
+				"name": "Elem组件二次封装",
+				"parentId": "1",
+				"menuUrl": "/comments/resetelmui_pack",
+				"children": []
+			},
+			{
+				"id": "1-3",
+				"name": "我的组件",
+				"parentId": "1",
+				"menuUrl": "/comments/MyComponents",
+				"children": []
+			}
+		]
+	},
+	{
+		"id": "2",
+		"name": "封装",
+		"parentId": "0",
+		"menuUrl": "#",
+		"children": [
+			{
+				"id": "2-1",
+				"name": "常用js封装",
+				"parentId": "2",
+				"menuUrl": "/package/comjs",
+				"children": []
+			},
+			{
+				"id": "2-2",
+				"name": "sass",
+				"parentId": "2",
+				"menuUrl": "/package/sass",
+				"children": []
+			},
+			{
+				"id": "2-3",
+				"name": "axios封装",
+				"parentId": "2",
+				"menuUrl": "/package/axios",
+				"children": []
+			},
+			{
+				"id": "2-4",
+				"name": "状态码统一管理",
+				"parentId": "2",
+				"menuUrl": "/package/statemanage",
+				"children": []
+			},
+			{
+				"id": "2-5",
+				"name": "api模块化",
+				"parentId": "2",
+				"menuUrl": "/package/api_model",
+				"children": []
+			},
+			{
+				"id": "2-6",
+				"name": "vuex模块化",
+				"parentId": "2",
+				"menuUrl": "/package/vuex_model",
+				"children": []
+			}
+		]
+	},
+	{
+		"id": "3",
+		"name": "其他",
+		"parentId": "0",
+		"menuUrl": "#",
+		"children": [
+			{
+				"id": "3-1",
+				"name": "权限",
+				"parentId": "2",
+				"menuUrl": "/model3/permision",
+				"children": []
+			}
+		]
+	}
+]

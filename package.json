@@ -67,6 +67,7 @@
     "postcss-import": "^11.0.0",
     "postcss-loader": "^2.0.8",
     "postcss-url": "^7.2.1",
+    "province-city-china": "^4.0.3",
     "rimraf": "^2.6.0",
     "sass-loader": "^7.1.0",
     "sass-resources-loader": "^2.0.1",

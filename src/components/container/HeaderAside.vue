@@ -1,69 +1,30 @@
 <!--
 -- @Author: keywin
 -- @StartingTime: 2019-11-18 19:22:05
--- @script: Header
+-- @script: HeaderAside
 -->
 <template>
 	<!-- 导航 -->
 	<div class="header-aside-el-menu-foo">
 		<el-scrollbar style="height: 100%;">
-			<el-menu default-active="comments/resetelmui_style"  class="header-aside-el-menu" popper-class="header-aside-el-menu" :collapse="isCollapse">
-				<el-submenu index="1">
+			<el-menu :default-active="menu_activeIndex" @select="handleSelect" class="header-aside-el-menu" popper-class="header-aside-el-menu" :collapse="isCollapse">
+				<el-submenu :index="item.id" v-for="(item, i) in menuList" :key="i">
 					<template slot="title">
 						<i class="el-icon-location"></i>
-						<span slot="title">组件</span>
+						<span slot="title">{{ item.name }}</span>
 					</template>
 					<el-menu-item-group>
-						<el-menu-item index="comments/resetelmui_style"><router-link to='/comments/resetelmui_style' tag="span">Elem样式修改</router-link></el-menu-item>
-						<el-menu-item index="1-2"><router-link to='/comments/resetelmui_pack' tag="span">Elem组件二次封装</router-link></el-menu-item>
-						<el-menu-item index="1-3">我的组件</el-menu-item>
-						<el-menu-item index="1-4">选项1</el-menu-item>
-					</el-menu-item-group>
-				</el-submenu>
-				<el-submenu index="2">
-					<template slot="title">
-						<i class="el-icon-location"></i>
-						<span slot="title">封装</span>
-					</template>
-					<el-menu-item-group>
-						<el-submenu index="2-1">
-							<span slot="title">js</span>
-							<el-menu-item index="2-1-1">选项1</el-menu-item>
-							<el-menu-item index="2-1-2">选项2</el-menu-item>
-						</el-submenu>
-						<el-submenu index="2-2">
-							<span slot="title">sass</span>
-							<el-menu-item index="2-2-1">选项1</el-menu-item>
-							<el-menu-item index="2-2-2">选项2</el-menu-item>
-						</el-submenu>
-						<el-submenu index="2-3">
-							<span slot="title">axios</span>
-							<el-menu-item index="2-3-1"><router-link to='/package/axios' tag="span">axios封装</router-link></el-menu-item>
-							<el-menu-item index="2-3-2"><router-link to='/package/statemanage' tag="span">状态码管理</router-link></el-menu-item>
-						</el-submenu>
-						
-						<el-submenu index="2-4">
-							<span slot="title">api</span>
-							<el-menu-item index="2-4-1">选项1</el-menu-item>
-							<el-menu-item index="2-4-2">选项2</el-menu-item>
-						</el-submenu>
-						<el-menu-item index="2-5"><router-link to='/package/vuex' tag="span">vuex</router-link></el-menu-item>
-					</el-menu-item-group>
-				</el-submenu>
-				<el-submenu index="3">
-					<template slot="title">
-						<i class="el-icon-location"></i>
-						<span slot="title">模块三</span>
-					</template>
-					<el-menu-item-group>
-						<el-menu-item index="3-1">选项1</el-menu-item>
-						<el-menu-item index="3-2">选项2</el-menu-item>
-						<el-menu-item index="3-3">选项3</el-menu-item>
-						<el-submenu index="3-4">
-							<span slot="title">选项4</span>
-							<el-menu-item index="3-4-1">选项1</el-menu-item>
-							<el-menu-item index="3-4-2">选项2</el-menu-item>
-						</el-submenu>
+						<span v-for="(item2, j) in item.children" :key="j">
+							<el-menu-item :index="item2.id" v-if="item2.children.length === 0">
+								<router-link :to='item2.menuUrl' tag="span">{{ item2.name }}</router-link>
+							</el-menu-item>
+							<el-submenu :index="item2.id" v-else>
+								<span slot="title">{{ item2.name }}</span>
+								<el-menu-item v-for="(item3, k) in item3.children" :key="k" :index="item3.id">
+									<router-link :to='item3.menuUrl' tag="span">{{ item3.name }}</router-link>
+								</el-menu-item>
+							</el-submenu>
+						</span>
 					</el-menu-item-group>
 				</el-submenu>
 			</el-menu>
@@ -72,98 +33,41 @@
 	
 </template>
 <script>
-let menuList = [
-	{
-		name: '灯效智控',
-		jurisdiction: '',
-		children: [
-			{
-				name: '灯效首页',
-				path: '/lampEffect/lampHome',
-				jurisdiction: ''
-			},
-			{
-				name: 'GIS地图',
-				path: '/lampEffect/lampEffectGis',
-				jurisdiction: ''
-			},
-			{
-				name: '节点管理',
-				path: '/lampEffect/nodeManagement',
-				jurisdiction: ''
-			},
-		]
-	},
-	{
-		name: '强电管理',
-		jurisdiction: '',
-		children: [
-			{
-				name: '强电首页',
-				path: '/lampEffect/lampHome',
-				jurisdiction: ''
-			},
-			{
-				name: '节点管理',
-				path: '/lampEffect/lampEffectGis',
-				jurisdiction: ''
-			},
-			{
-				name: '场景管理',
-				path: '/lampEffect/nodeManagement',
-				jurisdiction: ''
-			},
-		]
-	},
-	{
-		name: '故障监控',
-		jurisdiction: '',
-		children: [
-			{
-				name: '视频监控',
-				path: '/lampEffect/lampHome',
-				jurisdiction: ''
-			},
-			{
-				name: '故障列表',
-				path: '/lampEffect/lampEffectGis',
-				jurisdiction: ''
-			},
-			{
-				name: '操作日志',
-				path: '/lampEffect/nodeManagement',
-				jurisdiction: ''
-			},
-		]
-	},
-	{
-		name: '其他',
-		jurisdiction: '',
-		children: []
-	}
-]
 export default {
-    name: "Header",
+    name: "HeaderAside",
     data() {
-        return {};
+        return {
+					menuList: [], // 左侧树数据-权限
+					menu_activeIndex: '' // 默认选中
+				};
     },
     props: [
-		'isCollapse'
-	],
+			'isCollapse'
+		],
     watch: {},
     computed: {},
     components: {},
-    created() {},
+    created() {
+			this.getPermission()
+		},
     methods: {
-	},
+			// 获取权限列表数据
+			getPermission() {
+				this.$http_axios('/api/getPermission', {}, 'get').then(res => {
+					this.menuList = res.data
+					let menu_activeIndex = this.getSessionStorage('menu_activeIndex')
+					this.menu_activeIndex = menu_activeIndex ? menu_activeIndex : res.data[0].children[0].id
+				})
+			},
+			handleSelect(index) {
+				this.setSessionStorage('menu_activeIndex', index)
+			}
+		},
     mounted() {},
     updated() {},
     destroyed() {}
 };
 </script>
-<style lang="scss">
-
-</style>
 <style lang='scss' scoped>
 .header-aside-el-menu-foo{
 	height: calc(100vh - 80px - 60px);
