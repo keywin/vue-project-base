@@ -30,7 +30,8 @@ export default {
   name: "VuexModel",
   data() {
     return {
-      tableData: []
+			tableData: [],
+			userInfo: []
     };
   },
   props: [],
@@ -40,9 +41,9 @@ export default {
   },
   components: {},
   created() {
-    let arr = [];
-    arr.push(this.GET_USERINFO);
-    this.tableData = arr;
+    this.userInfo = []
+    this.userInfo.push(this.GET_USERINFO)
+    this.tableData = this.userInfo
   },
   methods: {
     ...mapMutations({
@@ -56,8 +57,7 @@ export default {
         // 存储用户信息
         this.SAVE_USER(res.data.userInfo);
       });
-    },
-    GET_USERINFO() {}
+    }
   },
   mounted() {},
   updated() {},
