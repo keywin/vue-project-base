@@ -5,6 +5,7 @@ import Home from '@/pages/Home.vue'
 import ResetElmUIPack from '@/pages/components/ResetElmUIPack.vue'
 import ResetElmUIStyle from '@/pages/components/ResetElmUIStyle.vue'
 import MyComponents from '@/pages/components/MyComponents.vue'
+import Upload from '@/pages/components/Upload.vue'
 
 import Comjs from '@/pages/package/Comjs.vue'
 import Sass from '@/pages/package/Sass.vue'
@@ -36,6 +37,11 @@ export default new Router({
         path: '/comments/myComponents',
         name: 'MyComponents',
         component: MyComponents
+			},
+			{
+        path: '/comments/upload',
+        name: 'Upload',
+        component: Upload
       },
       {
         path: '/package/comjs',

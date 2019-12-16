@@ -12,6 +12,9 @@ import { setSessionStorage, getSessionStorage } from '@/assets/js/storage.js'
 import Vuex from 'vuex'
 import store from './store'
 
+// 引入自定义过滤器
+import '@/assets/js/filter.js'
+
 // 样式
 import '@/assets/iconfont/iconfont.css'
 import 'element-ui/lib/theme-chalk/index.css'
