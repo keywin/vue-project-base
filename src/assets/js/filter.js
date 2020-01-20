@@ -1,5 +1,5 @@
 import Vue from 'vue'
 
-import { formateDate } from './common.js'
+import { COM_formateDate } from './common.js'
 
-Vue.filter('formateDate', (date, type = 1) =>  date ? formateDate(type, date) : '' )
+Vue.filter('COM_formateDate', (date, type = 1) =>  date ? COM_formateDate(type, date) : '' )
